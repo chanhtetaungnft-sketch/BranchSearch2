@@ -25,7 +25,6 @@ body{
     margin:auto;
 }
 
-/* TITLE */
 .title{
     text-align:center;
     font-size:34px;
@@ -34,7 +33,6 @@ body{
     margin-bottom:25px;
 }
 
-/* SEARCH BOX */
 .search-box{
     position:relative;
     background:white;
@@ -59,7 +57,6 @@ body{
     border-color:#2563eb;
 }
 
-/* SUGGESTIONS */
 .suggestions{
     position:absolute;
     top:95px;
@@ -90,7 +87,6 @@ body{
     border-bottom:none;
 }
 
-/* RESULT CARD */
 .card{
     display:none;
     background:white;
@@ -254,7 +250,6 @@ body{
 
 <script>
 
-/* JSON DATA */
 const branches = [
 {
         "No": "1",
@@ -2873,7 +2868,6 @@ const resultCard = document.getElementById('resultCard');
 const noResult = document.getElementById('noResult');
 const suggestions = document.getElementById('suggestions');
 
-/* SEARCH EVENT */
 searchInput.addEventListener('input', function(){
 
     const query = this.value.toLowerCase().trim();
@@ -2887,7 +2881,6 @@ searchInput.addEventListener('input', function(){
         return;
     }
 
-    /* FILTER */
     const filtered = branches.filter(branch =>
 
         branch["Br. No."].toLowerCase().includes(query) ||
@@ -2895,7 +2888,6 @@ searchInput.addEventListener('input', function(){
 
     );
 
-    /* SHOW SUGGESTIONS */
     if(filtered.length > 0){
 
         suggestions.style.display = "block";
@@ -2933,7 +2925,6 @@ searchInput.addEventListener('input', function(){
 
 });
 
-/* SHOW DATA */
 function showBranch(branch){
 
     resultCard.style.display = "block";
@@ -2949,7 +2940,6 @@ function showBranch(branch){
 
 }
 
-/* CLICK OUTSIDE CLOSE */
 document.addEventListener("click", function(e){
 
     if(!document.querySelector(".search-box").contains(e.target)){
